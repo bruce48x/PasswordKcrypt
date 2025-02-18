@@ -1,18 +1,22 @@
 import React from 'react';
-import { Button, Typography, Container } from '@mui/material';
-import theme from './theme';
-import { ThemeProvider } from '@mui/material/styles';
+import { Button, Typography, ConfigProvider } from 'antd';
+
+const theme = {
+  token: {
+    colorPrimary: '#1976d2', // 主色调
+  },
+};
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <Typography variant="h1">Hello, Material-UI!</Typography>
-        <Button variant="contained" color="primary">
+    <ConfigProvider theme={theme}>
+      <div>
+        <Typography>Hello, Material-UI!</Typography>
+        <Button color="primary">
           Click Me
         </Button>
-      </Container>
-    </ThemeProvider>
+      </div>
+    </ConfigProvider>
   );
 }
 
